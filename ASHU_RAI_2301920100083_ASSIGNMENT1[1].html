@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>G.L. BAJAJ</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            display: grid;
+            grid-template-areas:
+                "logo title"
+                "nav nav";
+            gap: 20px;
+            padding: 20px;
+            color: rgb(245, 139, 18);
+        }
+
+        .logo {
+            grid-area: logo;
+        }
+
+        .title {
+            grid-area: title;
+            text-align: center;
+        }
+
+        .nav {
+            grid-area: nav;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5px;
+        }
+
+        nav {
+            float: left;
+            width: 30%;
+            padding: 20px;
+        }
+
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        #registrationBlock {
+            display: none;
+            /* Initially hidden */
+            margin-top: 20px;
+            border: 1px solid #171616;
+            padding: 15px;
+        }
+
+        #loginBlock {
+            display: none;
+            /* Initially hidden */
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+        }
+        .button {
+      background-color: red; /* Set background color to red */
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+        .cart {
+            width: 150px;
+            height: 50px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTlC5w-J8vSJ3UL3uFTIKq9xhM24Li4fZuvw&s"alt="College Logo" class="logo" height="100" width="200">
+        <h1 align="center">GL BAJAJ INSTITUTE OF TECHONOLOGY AND MANAGEMENT GREATER NOIDA</h1>
+        <div class="nav">
+
+            <button id="homeButton" class="active">Home</button>
+            <button id="registrationButton">Registration</button>
+            <button id="loginButton">Login</button>
+            <button id="catalogueButton">Catalogue</button>
+            <button id="cartButton">Cart</button>
+
+        </div>
+    </header>
+    <section>
+        <nav>
+
+            <p><button id="cseButton">CSE</button></p>
+            <p> <button id="eceButton">ECE</button> </p>
+            <p><button id="eeButton">EE</button></p>
+            <p><button id="civilButton">CIVIL</button></p>
+
+        </nav>
+        <div id="homeContent">
+            <article>
+                <h2>Welcome to G.L. Bajaj Institute Of Technology & Management, Greater Noida</h2>
+                <h1>"A magnet for leaders and inspirational figures"</h1>
+                <p>GL Bajaj is an institute in Uttar Pradesh, India that aims to serve society through social
+                    initiatives. The institute's Rotaract Club has a motto of "Livelihood Enhancers Aspiring Development
+                    (L.E.A.D)". The club's activities include professional development, leadership development, and
+                    community service.</p>
+                <p>G.L. BAJAJ is dedicated to providing quality education that prepares students for success in their
+                    chosen careers. Our faculty is committed to fostering an inclusive and challenging academic
+                    environment.</p>
+                <p>With a diverse range of programs and extracurricular activities, students can explore their interests
+                    and develop skills that are vital in today's global marketplace.</p>
+            </article>
+        </div>
+        <div id="registrationContent" class="container" style="display: none;">
+
+            <div class="container">
+                <h2>Registration Form</h2>
+                <form>
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div>
+                        <label for="confirm-password">Confirm Password:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required>
+                    </div>
+                    <div>
+                        <label for="gender">Gender:</label>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <div>
+                        <label for="date-of-birth">Date of Birth:</label>
+                        <input type="date" id="date-of-birth" name="date-of-birth" required>
+                    </div>
+                    <button style="color: #ff2a00;">Register</button>
+                </form>
+            </div>
+        </div>
+        <div id="loginContent" class="container" style="display: none;">
+            <div class="container">
+                <h2>Login Page</h2>
+                <form>
+                    <label for="username">User Name:</label><br>
+                    <input type="text" id="username" name="username" required><br><br>
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required><br><br>
+<button style="color: #ff2a00;">SUBMIT</button>
+                    <button style="color: #ff2a00;">Reset</button>
+                </form>
+            </div>
+        </div>
+        <div id="catalogueContent" class="container" style="display: none;">
+            <div class="container">
+                <p>Browse our selection of high-quality educational resources, designed to equip you with the knowledge and skills you need to succeed in your chosen field.</p>
+      <ul>
+        <li><strong>Engineering Maths IV:</strong> Introduction to Engineering Mathematics - Volume IV has been thoroughly revised according to the New Syllabi (2018 onwards) of Dr. A.P.J. Abdul Kalam Technical University (AKTU, Lucknow). The book contains 13 chapters divided among five modules - Partial Differential Equations, Applications of Partial Differential Equations, Statistical Techniques - I, Statistical Techniques - II and Statistical Techniques - III. Price: ₹ 595</li>
+        <li><strong>Engineering Physics:</strong> This book is designed to serve as a comprehensive textbook for the students of Engineering Physics. It covers the entire syllabus of Engineering Physics prescribed by Dr. A.P.J. Abdul Kalam Technical University (AKTU, Lucknow). Price: ₹ 495</li>
+        <li><strong>Computer Science:</strong> This book is designed to serve as a comprehensive textbook for the students of Computer Science. It covers the entire syllabus of Computer Science prescribed by Dr. A.P.J. Abdul Kalam Technical University (AKTU, Lucknow). Price: ₹ 695</li>
+        
+      </ul>
+               
+            </div>
+        </div>
+        <div id="cartContent" style="display: none;">
+            <h2>Shopping Cart</h2>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Subtotal</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>Engineering Maths IV</td>
+                    <td>₹ 595</td>
+                    <td>₹ 595</td>
+                </tr>
+                <tr>
+                    <td>Engineering Physics</td>
+                    <td>₹ 495</td>
+                    <td>₹ 495</td>
+                </tr>
+                <tr>
+                    <td>Computer Science</td>
+                    <td>₹ 695</td>
+                    <td>₹ 695</td>
+                </tr>
+                <tr>
+                    <th colspan="3">Total</th>
+                    <th>₹ 1785</th>
+                    <th></th>
+                </tr>
+            </table>
+            <button>Checkout</button>
+            </div>
+            </div>
+        </div>
+        <div id="cseContent" class="container" style="display: none;">
+            <div class="container">
+                
+      <ul>
+        <h1 align="center">CSE Department Recommended Books(CSE)</h1>
+        <table>
+            <tr>
+              <th>Book</th>
+              <th>Author(s)</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>Data Structures Using C and C++</td>
+              <td>Aaron M. Tenenbaum, Yedidyah Langsam and Mosh J. Augenstein</td>
+              <td>A comprehensive introduction to the modern study of computer algorithms.</td>
+            </tr>
+            <tr>
+              <td>Software Engineering</td>
+              <td>Robert Mooren</td>
+              <td>This book emphasizes the importance of writing clean, maintainable code.</td>
+            </tr>
+            <tr>
+              <td>Engineering Mathematics</td>
+              <td>Russella Norvige</td>
+              <td>A leading textbook on engg. mathematics covering a range of topics.</td>
+            </tr>
+          </table>
+          </div></div>
+          <div id="eceContent" class="container" style="display: none;">
+            <div class="container">
+                <h1 align="center">ECE Department Recommended Books(ECE)</h1>
+                <table>
+                    <tr>
+                      <th>Book</th>
+                      <th>Author(s)</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td>Electronics</td>
+                      <td>Faron M. Tenenbaum, Yedidyah Langsam and Mosh J. Augenstein</td>
+                      <td>A comprehensive introduction to the modern study of ELECTRONIOCS.</td>
+                    </tr>
+                    <tr>
+                      <td>Circuits Engineering</td>
+                      <td>Robert Mooren</td>
+                      <td>This book emphasizes the importance of writing clean, maintainable circuits.</td>
+                    </tr>
+                    <tr>
+                      <td>Engineering Mathematics</td>
+                      <td>Russella Norvige</td>
+                      <td>A leading textbook on engg. mathematics covering a range of topics.</td>
+                    </tr>
+                  </table>
+            </div>
+          </div>
+          <div id="eeContent" class="container" style="display: none;">
+            <div class="container">
+                <h1 align="center">EE Department Recommended Books(EE)</h1>
+                <table>
+                    <tr>
+                      <th>Book</th>
+                      <th>Author(s)</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td>Electrical</td>
+                      <td>Zaron M. Tenenbaum, Yedidyah Langsam and Mosh J. Augenstein</td>
+                      <td>A comprehensive introduction to the modern study of ELECTRICAL.</td>
+                    </tr>
+                    <tr>
+                      <td>NODES Engineering</td>
+                      <td>Robert Mooren</td>
+                      <td>This book emphasizes the importance of writing clean, maintainable nodes.</td>
+                    </tr>
+                    <tr>
+                      <td>Engineering Mathematics</td>
+                      <td>Russella Norvige</td>
+                      <td>A leading textbook on engg. mathematics covering a range of topics.</td>
+                    </tr>
+                  </table>
+            </div>
+          </div>
+          <div id="civilContent" class="container" style="display: none;">
+            <div class="container">
+                <h1 align="center">CIVIL Department Recommended Books(CIVIL)</h1>
+                <table>
+                    <tr>
+                      <th>Book</th>
+                      <th>Author(s)</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr>
+                      <td>Civil</td>
+                      <td>Caron M. Tenenbaum, Yedidyah Langsam and Mosh J. Augenstein</td>
+                      <td>A comprehensive introduction to the modern study of Civil.</td>
+                    </tr>
+                    <tr>
+                      <td>Civil Engineering</td>
+                      <td>Robert Mooren</td>
+                      <td>This book emphasizes the importance of writing clean, maintainable civil.</td>
+                    </tr>
+                    <tr>
+                      <td>Engineering Mathematics</td>
+                      <td>Russella Norvige</td>
+                      <td>A leading textbook on engg. mathematics covering a range of topics.</td>
+                    </tr>
+                  </table>
+            </div>
+          </div>
+
+
+
+        <script>
+            const homeButton = document.getElementById('homeButton');
+            const registrationButton = document.getElementById('registrationButton');
+            const loginButton = document.getElementById('loginButton');
+            const catalogueButton = document.getElementById('catalogueButton');
+            const cartButton = document.getElementById('cartButton');
+            const eceButton = document.getElementById('eceButton');
+            const eeButton = document.getElementById('eeButton');
+            const civilButton = document.getElementById('civilButton');
+            
+
+            const homeContent = document.getElementById('homeContent');
+            const registrationContent = document.getElementById('registrationContent');
+            const loginContent = document.getElementById('loginContent');
+            const catalogueContent = document.getElementById('catalogueContent');
+            const cartContent = document.getElementById('cartContent');
+            const cseContent = document.getElementById('cseContent');
+            const eceContent = document.getElementById('eceContent');
+            const eeContent = document.getElementById('eeContent');
+            const civilContent = document.getElementById('civilContent');
+
+            homeButton.addEventListener('click', () => {
+                homeContent.style.display = 'block';
+                registrationContent.style.display = 'none';
+                loginContent.style.display = 'none';
+                catalogueContent.style.display = 'none';
+                cartContent.style.display = 'none';
+                cseContent.style.display= 'none'
+                eceContent.style.display = 'none';
+                eeContent.style.display = 'none';
+                civilContent.style.display = 'none';
+                
+            });
+
+            registrationButton.addEventListener('click', () => {
+                homeContent.style.display = 'none';
+                registrationContent.style.display = 'block';
+                loginContent.style.display = 'none';
+                catalogueContent.style.display = 'none';
+                cartContent.style.display = 'none';
+                cseContent.style.display = 'none';
+                eceContent.style.display = 'none';
+                eeContent.style.display = 'none';
+                civilContent.style.display = 'none';
+
+            });
+
+            loginButton.addEventListener('click', () => {
+                homeContent.style.display = 'none';
+                registrationContent.style.display = 'none';
+                loginContent.style.display = 'block';
+                catalogueContent.style.display = 'none';
+                cartContent.style.display = 'none';
+                cseContent.style.display = 'none';
+                eceContent.style.display = 'none';
+                eeContent.style.display = 'none';
+                civilContent.style.display = 'none';
+            });
+
+            catalogueButton.addEventListener('click', () => {
+                homeContent.style.display = 'none';
+                registrationContent.style.display = 'none';
+                loginContent.style.display = 'none';
+                catalogueContent.style.display = 'block';
+                cartContent.style.display = 'none';
+                cseContent.style.display = 'none';
+                eceContent.style.display = 'none';
+                eeContent.style.display = 'none';
+                civilContent.style.display = 'none';
+            });
+
+            cartButton.addEventListener('click', () => {
+                homeContent.style.display = 'none';
+                registrationContent.style.display = 'none';
+                loginContent.style.display = 'none';
+                catalogueContent.style.display = 'none';
+                cartContent.style.display = 'block';
+                cseContent.style.display = 'none';
+                eceContent.style.display = 'none';
+                eeContent.style.display = 'none';
+                civilContent.style.display = 'none';
+            });
+            cseButton.addEventListener('click', () => {
+                homeContent.style.display = 'none';
+                registrationContent.style.display = 'none';
+                loginContent.style.display = 'none';
+                catalogueContent.style.display = 'none';
+                cartContent.style.display = 'none';
+                cseContent.style.display = 'block';
+                eceContent.style.display = 'none';
+                eeContent.style.display = 'none';
+                civilContent.style.display = 'none';
+
+                
+            });
+            eceButton.addEventListener('click', () => {
+                homeContent.style.display = 'none';
+                registrationContent.style.display = 'none';
+                loginContent.style.display = 'none';
+                catalogueContent.style.display = 'none';
+                cartContent.style.display = 'none';
+                cseContent.style.display = 'none';
+                eceContent.style.display = 'block';
+                eeContent.style.display = 'none';
+                civilContent.style.display = 'none';
+            });
+            eeButton.addEventListener('click', () => {
+                homeContent.style.display = 'none';
+                registrationContent.style.display = 'none';
+                loginContent.style.display = 'none';
+                catalogueContent.style.display = 'none';
+                cartContent.style.display = 'none';
+                cseContent.style.display = 'none';
+                eceContent.style.display = 'none';
+                eeContent.style.display = 'block';
+                civilContent.style.display = 'none';
+            });
+            civilButton.addEventListener('click', () => {
+                homeContent.style.display = 'none';
+                registrationContent.style.display = 'none';
+                loginContent.style.display = 'none';
+                catalogueContent.style.display = 'none';
+                cartContent.style.display = 'none';
+                cseContent.style.display = 'none';
+                eceContent.style.display = 'none';
+                eeContent.style.display = 'none';
+                civilContent.style.display = 'block';
+            });
+
+        </script>
+
+    </section>
+</body>
+
+</html>
